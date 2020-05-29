@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', redirectTo:'/translate', pathMatch:'full'},
   {path: 'translate', component: TranslateComponent},
   {path: 'thesaurus', component: ThesaurusComponent},
-  {path:'**',redirectTo:'translate'}
+  {path:'**',redirectTo:'/'}
 ];
 
 @NgModule({
