@@ -11,6 +11,8 @@ import {Subscription} from "rxjs";
 export class ThesaurusComponent implements OnInit, OnDestroy {
   @ViewChild('f', {static: false}) form: NgForm;
   definitions: string[] = [];
+  loadingSearch = false;
+  searchError = null;
   private subscription: Subscription;
 
   constructor(private translationService: TranslationService) {
@@ -20,9 +22,16 @@ export class ThesaurusComponent implements OnInit, OnDestroy {
   }
 
   onSearch() {
+    this.loadingSearch = true;
     const input: string = this.form.form.value.inputTextarea;
     this.translationService.fetchThesaurus(input).subscribe(list => {
       this.definitions = list;
+      this.loadingSearch = false;
+      this.searchError = null;
+    }, error => {
+      console.log(error.message);
+      this.loadingSearch = false;
+      this.searchError = error.message;
     })
 
   }

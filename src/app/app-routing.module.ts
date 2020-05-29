@@ -5,7 +5,7 @@ import {ThesaurusComponent} from "./thesaurus/thesaurus.component";
 
 
 const routes: Routes = [
-  {path: '', component: TranslateComponent},
+  {path: '', redirectTo:'/translate', pathMatch:'full'},
   {path: 'translate', component: TranslateComponent},
   {path: 'thesaurus', component: ThesaurusComponent}
 ];

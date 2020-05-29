@@ -42,7 +42,6 @@ export class TranslationService {
     return this.http.get(url + input, {headers: headers}).pipe(map(responseData => {
       const definitions: string[] = [];
       for (let val in responseData['results']) {
-        console.log(val);
         definitions.push(responseData['results'][val]['definition']);
       }
       return definitions;

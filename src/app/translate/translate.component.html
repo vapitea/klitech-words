@@ -24,6 +24,9 @@
       </div>
 
       <button class="btn btn-primary" type="button" (click)="onDetectLanguage()">Detect language</button>
+      <div class="alert alert-danger" role="alert" *ngIf="detectError">{{ detectError }}</div>
+      <div class="loader" *ngIf="loadingDetect && !detectError">Loading...</div>
+
       <hr>
       <div class="form-group">
         <textarea class="form-control" name="inputTextarea" rows="4" ngModel>
@@ -33,6 +36,9 @@
       <hr>
 
       <button class="btn btn-primary" type="button" (click)="onTranslate()">Translate</button>
+      <div class="alert alert-danger" role="alert" *ngIf="translationError">{{ translationError }}</div>
+      <div class="loader" *ngIf="loadingTranslation && !translationError">Loading...</div>
+
       <hr>
       <div class="form-group">
         <textarea class="form-control" name="outputTextarea" rows="4" ngModel>

@@ -7,7 +7,7 @@ import {HeaderComponent} from './header/header.component';
 import {TranslateComponent} from './translate/translate.component';
 import {ThesaurusComponent} from './thesaurus/thesaurus.component';
 import {FormsModule} from "@angular/forms";
-import {HttpClientJsonpModule, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import {HttpClientJsonpModule, HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,10 +8,13 @@
       <div class="form-group">
         <button class="btn btn-success" type="button" (click)="onSearch()">Search</button>
       </div>
+      <div class="loader" *ngIf="loadingSearch && !searchError">Loading...</div>
 
-      <ul class="list-group" *ngIf="definitions.length>0">
+   <ul class="list-group" *ngIf="definitions.length>0">
         <li class="list-group-item" *ngFor="let definition of definitions">{{ definition }}</li>
       </ul>
+
+      <div class="alert alert-danger" role="alert" *ngIf="searchError">{{ searchError }}</div>
 
     </form>
   </div>
